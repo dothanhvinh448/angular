@@ -11,7 +11,7 @@ import { CartproductService } from 'src/app/service/cartproduct.service';
 })
 export class InfoComponent implements OnInit {
   listUser:User[]=[];
-  listUser2:User[]=[];
+  listUser2:User[]|any=[];
   id:number|any
   user:User=new User
   constructor(private authsevice:AuthService ,private cartservice:CartproductService) { }
@@ -46,7 +46,7 @@ export class InfoComponent implements OnInit {
     update(frm:NgForm)
     {
       if(frm.valid){
-        let tmp=Object.assign({},this.user);
+        let tmp=Object.assign({},this.listUser2);
         this.authsevice.listRegister.push(tmp);
         this.authsevice.update();
         frm.reset();

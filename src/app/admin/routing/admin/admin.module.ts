@@ -5,6 +5,8 @@ import { adminRouting } from './admin.routing';
 import { ListorderComponent } from '../../pages/listorder/listorder.component';
 import { ListuserComponent } from '../../pages/listuser/listuser.component';
 import { QldtComponent } from '../../pages/qldt/qldt.component';
+import { AddproductComponent } from '../../pages/addproduct/addproduct.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,11 +15,13 @@ import { QldtComponent } from '../../pages/qldt/qldt.component';
     LayoutComponent,
     ListorderComponent,
     ListuserComponent,
-    QldtComponent
+    QldtComponent,
+    AddproductComponent
   ],
   imports: [
     CommonModule,
-    adminRouting
+    adminRouting,
+    FormsModule,
     
     
   ]

@@ -23,7 +23,7 @@ public adminLogin:Admin|any
       this.router.navigate(['client/login'])
     }
     update(){
-      this.listRegister.pop()
+      // this.listRegister.pop()
       localStorage.setItem('listuser',JSON.stringify(this.listRegister));
         alert('cập nhật thành công')
     location.reload()
@@ -35,7 +35,7 @@ public adminLogin:Admin|any
         try 
         {
           getuser=this.listRegister.find(function(item:any){
-            if(user.email==item.email&&user.password==item.password){
+            if(user.email==item.email && user.password == item.password){
              getuser=item
                 localStorage.setItem("currentUser",JSON.stringify(getuser));
                 res(getuser);

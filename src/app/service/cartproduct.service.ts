@@ -53,9 +53,9 @@ export class CartproductService {
               return []
             }
           } catch (error) {
-            return []
+            return error
           }
-    }
+    } 
   constructor(private authSevice:AuthService,private router:Router) { }
  
 }

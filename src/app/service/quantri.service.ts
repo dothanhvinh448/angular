@@ -1,13 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Order } from '../model/order.model';
+import { product } from '../model/product.model';
+import { ApiService } from './api.service';
 import { CartproductService } from './cartproduct.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class QuantriService {
+export class QuantriService extends ApiService{
 
-  constructor(private cartproduct:CartproductService) { }
+  constructor(private cartproduct:CartproductService,httpClient:HttpClient) { 
+    super(httpClient);
+  }
+
 public listitem:Order|any=[]
 listitem1:Order[]|any=[]
 
@@ -33,6 +39,10 @@ getacceptance()
     return []
   }
 }
+}
+addproduct(Product:product)
+{
+  return this.post("/api/angular/products",Product)
 }
 
 }
